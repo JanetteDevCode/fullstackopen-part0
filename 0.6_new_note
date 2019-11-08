@@ -1,0 +1,5 @@
+note over browser: Save button on form is clicked
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa \n (request payload includes content type application/json)
+note over server: create new note object and add to array notes; \n no URL redirect request
+server-->browser: HTTP Status Code 201 Created
+note over browser: stays on same page; \n no further HTTP requests

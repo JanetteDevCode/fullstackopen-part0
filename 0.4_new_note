@@ -1,0 +1,18 @@
+note over browser: Save button on form is clicked
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note \n (form data is sent)
+note over server: create new note object and add to array notes; \n ask browser for URL redirect
+server-->browser: HTTP Status Code 302 Found
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: notes page (text/html)
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css (text/css)
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js (application/javascript)
+note over browser:
+browser executes main.js 
+end note
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: array of notes (application/json)
+note over browser:
+browser executes callback to display notes
+end note
